@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,52 +6,44 @@
 
 @layer base {
   :root {
-    --background: 40 33% 97%;
-    --foreground: 48 5% 10%;
+    --background: 0 0% 100%;
+    --foreground: 210 50% 10%;
 
-    --card: 40 33% 97%;
-    --card-foreground: 48 5% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 50% 10%;
 
-    --popover: 40 33% 97%;
-    --popover-foreground: 48 5% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 50% 10%;
 
-    --primary: 7 72% 36%;
-    --primary-foreground: 40 33% 95%;
+    --primary: 210 72% 15%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 48 5% 10%;
-    --secondary-foreground: 40 33% 95%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 210 50% 10%;
 
-    --muted: 36 24% 90%;
-    --muted-foreground: 48 5% 40%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 40 70% 47%;
-    --accent-foreground: 48 5% 10%;
+    --accent: 24 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 36 20% 85%;
-    --input: 36 20% 85%;
-    --ring: 7 72% 36%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 24 100% 50%;
 
-    --radius: 0.125rem;
+    --radius: 0.5rem;
 
-    /* Custom Redwood tokens */
-    --charcoal: 48 5% 10%;
-    --charcoal-mid: 48 4% 16%;
-    --charcoal-light: 48 3% 23%;
-    --brick: 7 72% 36%;
-    --brick-light: 9 66% 45%;
-    --brick-pale: 7 66% 54%;
-    --cream: 36 33% 93%;
-    --cream-dark: 36 24% 86%;
-    --gold: 38 66% 47%;
-    --gold-light: 42 72% 56%;
-    --warm-white: 40 33% 97%;
-    --steel: 215 10% 35%;
-    --steel-light: 215 10% 50%;
-    --text-mid: 48 5% 29%;
-    --text-light: 48 4% 46%;
+    /* Custom tokens */
+    --navy: 210 72% 15%;
+    --navy-light: 210 50% 25%;
+    --orange: 24 100% 50%;
+    --orange-hover: 24 100% 45%;
+    --gray-light: 220 14% 96%;
+    --gray-mid: 215 16% 47%;
+    --gray-dark: 220 13% 91%;
   }
 }
 
@@ -61,60 +53,20 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
-  h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    line-height: 1.1;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.15;
   }
 }
 
 @layer utilities {
-  .font-serif-display {
-    font-family: 'Playfair Display', serif;
-  }
-  .font-condensed {
-    font-family: 'Barlow Condensed', sans-serif;
-  }
-  .font-body {
-    font-family: 'Barlow', sans-serif;
-  }
   .section-pad {
-    padding-top: clamp(4rem, 8vw, 8rem);
-    padding-bottom: clamp(4rem, 8vw, 8rem);
-    padding-left: clamp(1.5rem, 4vw, 4rem);
-    padding-right: clamp(1.5rem, 4vw, 4rem);
+    @apply py-16 md:py-24 px-4 md:px-8 lg:px-16;
   }
 }
 
-/* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
-
-/* Scroll reveal animation */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.reveal {
-  opacity: 0;
-  transition: opacity 0.7s ease, transform 0.7s ease;
-  transform: translateY(20px);
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hero-animate > * {
-  animation: fadeUp 0.8s ease both;
-}
-
-.hero-animate > *:nth-child(1) { animation-delay: 0.1s; }
-.hero-animate > *:nth-child(2) { animation-delay: 0.2s; }
-.hero-animate > *:nth-child(3) { animation-delay: 0.3s; }
-.hero-animate > *:nth-child(4) { animation-delay: 0.4s; }
-.hero-animate > *:nth-child(5) { animation-delay: 0.5s; }
