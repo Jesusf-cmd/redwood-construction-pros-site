@@ -1,16 +1,51 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import TrustBar from "@/components/TrustBar";
+import Services from "@/components/Services";
+import MetalBuildings from "@/components/MetalBuildings";
+import About from "@/components/About";
+import Process from "@/components/Process";
+import ServiceArea from "@/components/ServiceArea";
+import Testimonials from "@/components/Testimonials";
+import CTABand from "@/components/CTABand";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import { useEffect } from "react";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  useEffect(() => {
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add("visible"), i * 80);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    reveals.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="overflow-x-hidden">
+      <Navbar />
+      <Hero />
+      <TrustBar />
+      <Services />
+      <MetalBuildings />
+      <About />
+      <Process />
+      <ServiceArea />
+      <Testimonials />
+      <CTABand />
+      <Contact />
+      <Footer />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
