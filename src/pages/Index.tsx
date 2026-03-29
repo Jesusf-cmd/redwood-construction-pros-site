@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, AlertTriangle, Home as HomeIcon, Building, Wrench, CheckCircle, ArrowRight, DollarSign, ClipboardCheck, Hammer, HardHat, Eye } from "lucide-react";
+import { Phone, Mail, AlertTriangle, Home as HomeIcon, Building, Wrench, CheckCircle, ArrowRight, DollarSign, ClipboardCheck, Hammer, HardHat, Eye, Star, CloudRain, Zap } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/FAQSection";
 import PageCTA from "@/components/PageCTA";
@@ -8,7 +8,6 @@ import heroImg from "@/assets/hero-construction.jpg";
 
 const PHONE = "4057609706";
 const PHONE_DISPLAY = "405-760-9706";
-const EMAIL = "jose@redwoodconstructionpros.com";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -39,10 +38,11 @@ const jsonLd = {
 };
 
 const problems = [
-  { icon: AlertTriangle, text: "Roof leaks after storms — water stains on ceilings, wet insulation, rotting decking" },
-  { icon: Wrench, text: "Hail damage and insurance claims — dented shingles, granule loss, adjuster disputes" },
-  { icon: HomeIcon, text: "Need a custom home built correctly — strong slab, proper framing, no callbacks" },
-  { icon: Building, text: "Need a shop, barndominium, or steel building — concrete pad to final panel install" },
+  { icon: CloudRain, title: "Roof leaks after storms", text: "Water stains on ceilings, wet insulation, rotting decking — if it's not addressed fast, the damage spreads into framing and drywall." },
+  { icon: Zap, title: "Hail damage and insurance claims", text: "Dented shingles, granule loss, adjuster disputes. We document every hit and handle your carrier so nothing gets missed on the scope." },
+  { icon: AlertTriangle, title: "Aging roof that needs full replacement", text: "Curling shingles, exposed nail heads, failed flashing. Past its lifespan, repairs won't hold — it needs a full tear-off and re-roof." },
+  { icon: HomeIcon, title: "Custom home built right from the ground up", text: "Strong slab, proper framing, no callbacks. We control foundation, structure, and finish — not just cosmetics." },
+  { icon: Building, title: "Shop, barndominium, or steel building", text: "Concrete pad to final panel install. We pour the slab, erect the steel, and button up the building — one crew, one contractor." },
 ];
 
 const processSteps = [
@@ -61,7 +61,7 @@ const faqs = [
   { question: "How long does it take to build a custom home in Moore OK?", answer: "Typically 4–8 months depending on size, site prep, and complexity. We control foundation, framing, and structure in-house, which keeps timelines tight." },
   { question: "Do you handle insurance claims for storm damage?", answer: "Yes. We inspect, document, and file with your carrier. We deal with adjusters directly and make sure nothing gets missed on the scope." },
   { question: "What areas do you serve?", answer: "Moore, Oklahoma City, Edmond, Norman, Yukon, Mustang, and the surrounding OKC metro. We're based in Moore and run crews across the metro daily." },
-  { question: "Do you pour your own concrete slabs?", answer: "Yes. We control the slab pour in-house — proper grade, rebar, thickness, and cure time. That's a major advantage over contractors who sub out foundation work." },
+  { question: "Are impact-resistant shingles worth it in Oklahoma?", answer: "Yes. Class 4 impact-resistant shingles withstand hail better, reduce future claim frequency, and most Oklahoma insurers offer 15–28% premium discounts for them." },
   { question: "Can you build a barndominium in Oklahoma?", answer: "Absolutely. We handle the full build — concrete slab, red iron or steel frame, exterior panels, insulation, and interior buildout. Most barndos take 8–14 weeks depending on finish level." },
 ];
 
@@ -74,6 +74,12 @@ const serviceLinks = [
   { label: "Barndominium Builder in Oklahoma", to: "/barndominium-builder-oklahoma", description: "Full barndominium builds — concrete slab, steel frame, panels, insulation, and interior finish." },
 ];
 
+const projects = [
+  { title: "Roof Replacement — Moore, OK", type: "Roofing", desc: "Full tear-off and re-roof after hail damage. Impact-resistant shingles, new underlayment, replaced 12 sheets of decking. Insurance claim handled start to finish." },
+  { title: "30x50 Steel Shop — Oklahoma City", type: "Metal Building", desc: "Concrete slab, red iron frame, R-19 insulation, 26-gauge panels. Built for equipment storage with 12-foot sidewalls and a 14-foot roll-up door." },
+  { title: "Custom Home Build — Moore, OK", type: "Custom Home", desc: "2,400 sq ft ground-up build. Post-tension slab, 2x6 framing, standing seam metal roof, open floor plan with custom finishes throughout." },
+];
+
 const Index = () => (
   <>
     <SEOHead
@@ -83,8 +89,8 @@ const Index = () => (
       jsonLd={jsonLd}
     />
 
-    {/* HERO */}
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    {/* ── HERO ── */}
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={heroImg}
@@ -94,16 +100,16 @@ const Index = () => (
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0 bg-primary/80" />
+        <div className="absolute inset-0 bg-primary/85" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-4 md:px-8 lg:px-16 pt-24 pb-20 md:pt-32 md:pb-28">
-        <h1 className="text-3xl md:text-4xl lg:text-[52px] font-black text-primary-foreground leading-[1.1] max-w-[900px] mb-6">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-4 md:px-8 lg:px-16 pt-28 pb-20 md:pt-36 md:pb-28">
+        <h1 className="text-3xl md:text-4xl lg:text-[48px] font-black text-primary-foreground leading-[1.1] max-w-[880px] mb-6">
           Roofing Contractor in Moore, OK — Hail Damage, Roof Replacement, Custom Homes & Metal Buildings
         </h1>
 
-        <p className="text-lg md:text-xl text-primary-foreground/80 font-medium max-w-[700px] mb-10">
-          We handle roofing, custom home builds, and metal building construction across Moore OK and the Oklahoma City metro. No sales reps — just the contractor who runs the crew and builds the job. Call for a same-day estimate.
+        <p className="text-base md:text-lg text-primary-foreground/80 font-medium max-w-[700px] mb-10 leading-relaxed">
+          Local contractor serving Moore and the Oklahoma City metro with roof replacements, storm damage repair, custom homes, steel buildings, and barndominiums. Fast estimates. Call or text 405-760-9706.
         </p>
 
         <div className="flex gap-4 flex-wrap mb-8">
@@ -135,37 +141,44 @@ const Index = () => (
       </div>
     </section>
 
-    {/* PROBLEMS WE SOLVE */}
+    {/* ── PROBLEMS WE SOLVE ── */}
     <section className="section-pad bg-secondary">
       <div className="max-w-[1200px] mx-auto">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-10">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4">
           Problems We Solve in Moore OK & Oklahoma City
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <p className="text-muted-foreground text-lg mb-10 max-w-[700px]">
+          If you're dealing with any of these — we handle it. No runaround, no waiting weeks for a callback.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {problems.map((p) => (
-            <div key={p.text} className="flex items-start gap-4 p-6 rounded-xl bg-background border border-border">
+            <div key={p.title} className="flex flex-col gap-3 p-6 rounded-xl bg-background border border-border">
               <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
                 <p.icon className="w-6 h-6 text-accent" />
               </div>
-              <p className="text-foreground font-medium leading-relaxed">{p.text}</p>
+              <h3 className="text-lg font-bold text-primary">{p.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{p.text}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    {/* SERVICES — LINK OUT */}
+    {/* ── SERVICES HUB ── */}
     <InternalLinks heading="Our Services — Moore OK & OKC Metro" links={serviceLinks} />
 
-    {/* WHY CHOOSE US */}
+    {/* ── WHY CHOOSE US ── */}
     <section className="section-pad bg-secondary">
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         <div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-6">
             Why Contractors in Moore OK and OKC Lose to Us
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
             Most roofing companies sub out everything. They don't pour slabs. They don't frame walls. We do. Redwood Construction Pros handles roofing, concrete, structural steel, framing, and full builds — all under one crew, one owner.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            That means fewer delays, fewer finger-pointing callbacks, and a final product built the way it should be — not the cheapest way a sub could get away with.
           </p>
         </div>
         <div className="flex flex-col gap-4">
@@ -185,7 +198,7 @@ const Index = () => (
       </div>
     </section>
 
-    {/* PROCESS */}
+    {/* ── PROCESS ── */}
     <section className="section-pad bg-background">
       <div className="max-w-[1200px] mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-10">
@@ -208,43 +221,79 @@ const Index = () => (
       </div>
     </section>
 
-    {/* PRICING */}
+    {/* ── PRICING ── */}
     <section className="section-pad bg-secondary">
       <div className="max-w-[1200px] mx-auto">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-10">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4">
           What Construction Costs in Oklahoma — Real Numbers
         </h2>
+        <p className="text-muted-foreground text-lg mb-10 max-w-[700px]">
+          These are ranges — not fixed bids. Final price depends on scope, materials, and site conditions. We give exact numbers after inspection.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-8 rounded-xl bg-background border border-border">
-            <DollarSign className="w-8 h-8 text-accent mb-4" />
-            <h3 className="text-xl font-bold text-primary mb-3">Roofing</h3>
-            <p className="text-2xl font-extrabold text-accent mb-2">$6–$10 / sq ft</p>
-            <ul className="flex flex-col gap-2 text-muted-foreground text-sm">
-              <li>• Includes tear-off and install</li>
-              <li>• Varies by material and decking condition</li>
-              <li>• Impact-resistant shingles add $1–$2/sq ft</li>
-            </ul>
-          </div>
-          <div className="p-8 rounded-xl bg-background border border-border">
-            <DollarSign className="w-8 h-8 text-accent mb-4" />
-            <h3 className="text-xl font-bold text-primary mb-3">Metal Buildings</h3>
-            <p className="text-2xl font-extrabold text-accent mb-2">$20–$40 / sq ft</p>
-            <ul className="flex flex-col gap-2 text-muted-foreground text-sm">
-              <li>• Includes slab and steel erection</li>
-              <li>• Size and finish level affect price</li>
-              <li>• Insulation and interior add cost</li>
-            </ul>
-          </div>
-          <div className="p-8 rounded-xl bg-background border border-border">
-            <DollarSign className="w-8 h-8 text-accent mb-4" />
-            <h3 className="text-xl font-bold text-primary mb-3">Custom Homes</h3>
-            <p className="text-2xl font-extrabold text-accent mb-2">$120–$200 / sq ft</p>
-            <ul className="flex flex-col gap-2 text-muted-foreground text-sm">
-              <li>• Foundation, framing, finish</li>
-              <li>• Depends on specs and site</li>
-              <li>• Turnkey delivery available</li>
-            </ul>
-          </div>
+          {[
+            { title: "Roofing", range: "$6–$10 / sq ft", details: ["Includes tear-off and install", "Varies by material and decking condition", "Impact-resistant shingles add $1–$2/sq ft", "Steep pitch or complex cuts cost more"] },
+            { title: "Metal Buildings", range: "$20–$40 / sq ft", details: ["Includes slab and steel erection", "Size, finish level, and insulation affect price", "Roll-up doors, windows, and trim extra", "Turnkey interior buildout available"] },
+            { title: "Custom Homes", range: "$120–$200 / sq ft", details: ["Foundation, framing, full finish", "Depends on design and site complexity", "In-house slab and structural work", "Turnkey delivery available"] },
+          ].map((p) => (
+            <div key={p.title} className="p-8 rounded-xl bg-background border border-border">
+              <DollarSign className="w-8 h-8 text-accent mb-4" />
+              <h3 className="text-xl font-bold text-primary mb-3">{p.title}</h3>
+              <p className="text-2xl font-extrabold text-accent mb-4">{p.range}</p>
+              <ul className="flex flex-col gap-2 text-muted-foreground text-sm">
+                {p.details.map((d) => (
+                  <li key={d} className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0" />
+                    {d}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── RECENT PROJECTS / PROOF ── */}
+    <section className="section-pad bg-background">
+      <div className="max-w-[1200px] mx-auto">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4">
+          Recent Projects — Moore OK & OKC Metro
+        </h2>
+        <p className="text-muted-foreground text-lg mb-10 max-w-[700px]">
+          Here's what we've been building. Real jobs, real scope, real results.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {projects.map((proj) => (
+            <div key={proj.title} className="rounded-xl border border-border overflow-hidden bg-secondary">
+              <div className="h-48 bg-muted flex items-center justify-center">
+                <span className="text-muted-foreground text-sm font-medium">Project Photo Coming Soon</span>
+              </div>
+              <div className="p-6">
+                <span className="text-xs font-bold uppercase tracking-wider text-accent">{proj.type}</span>
+                <h3 className="text-lg font-bold text-primary mt-2 mb-3">{proj.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{proj.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Testimonials */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            { name: "Mike R., Moore OK", text: "Had hail damage from the May storm. They came out same day, walked the roof, and handled everything with my insurance. New roof was on in two days. No complaints." },
+            { name: "Sarah T., Oklahoma City", text: "We hired them for a 30x50 shop. They poured the slab, set the steel, and had panels up in under three weeks. Clean work, showed up when they said they would." },
+          ].map((t) => (
+            <div key={t.name} className="p-6 rounded-xl bg-secondary border border-border">
+              <div className="flex gap-1 mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                ))}
+              </div>
+              <p className="text-foreground leading-relaxed mb-4 italic">"{t.text}"</p>
+              <p className="text-sm font-bold text-primary">— {t.name}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
