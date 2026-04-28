@@ -1,5 +1,3 @@
-import { z } from 'https://deno.land/x/zod@v3.25.76/mod.ts'
-
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
@@ -11,10 +9,7 @@ const ALLOWED_HOSTS = new Set([
   'redwoodconstrucionprscom.lovable.app',
 ])
 
-const BotRequestSchema = z.object({
-  url: z.string().url().optional(),
-  path: z.string().min(1).max(500).optional(),
-})
+type PrerenderRequestBody = { url?: string; path?: string }
 
 function json(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -23,7 +18,14 @@ function json(body: unknown, status = 200) {
   })
 }
 
-function resolveTargetUrl(req: Request, body?: z.infer<typeof BotRequestSchema>) {
+function isValidBody(value: unknown): value is PrerenderRequestBody {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return false
+  const body = value as Record<string, unknown>
+  return (body.url === undefined || typeof body.url === 'string') &&
+    (body.path === undefined || (typeof body.path === 'string' && body.path.length > 0 && body.path.length <= 500))
+}
+
+function resolveTargetUrl(req: Request, body?: PrerenderRequestBody) {
   const requestUrl = new URL(req.url)
   const explicitUrl = body?.url ?? requestUrl.searchParams.get('url') ?? undefined
   const explicitPath = body?.path ?? requestUrl.searchParams.get('path') ?? undefined
