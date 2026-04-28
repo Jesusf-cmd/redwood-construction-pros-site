@@ -4,8 +4,8 @@ import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/FAQSection";
 import PageCTA from "@/components/PageCTA";
 
-const PHONE = "4057609706";
-const PHONE_DISPLAY = "405-760-9706";
+const PHONE = "4054069830";
+const PHONE_DISPLAY = "405-406-9830";
 
 const faqs = [
   { question: "Will insurance cover hail damage roof repair in Moore OK?", answer: "In most cases, yes. Oklahoma homeowner policies cover wind and hail damage. Your deductible applies, and insurance pays the rest. We inspect, document everything, and coordinate with your adjuster to get the claim approved." },
@@ -17,7 +17,7 @@ const faqs = [
   { question: "Do I have to use the insurance company's preferred roofer?", answer: "No. In Oklahoma, you have the right to choose your own contractor. Insurance companies suggest preferred vendors, but you are not required to use them. We work with all carriers and handle the same process." },
   { question: "How long does a hail damage roof replacement take?", answer: "1–2 days from tear-off to final cleanup. The insurance claim process takes 2–4 weeks on average — from filing to approval to scheduled install." },
   { question: "What if my insurance adjuster says there's no damage?", answer: "It happens. Some adjusters miss damage or underscope the job. We can request a re-inspection, provide supplemental documentation, or escalate the claim. We know what to look for and how to document it so nothing gets left off." },
-  { question: "Do you offer emergency tarping after storm damage in Moore OK?", answer: "Yes. If your roof is actively leaking after a storm, we can tarp it to prevent further water intrusion while the claim is processed. Call 405-760-9706 as soon as the storm passes." },
+  { question: "Do you offer emergency tarping after storm damage in Moore OK?", answer: "Yes. If your roof is actively leaking after a storm, we can tarp it to prevent further water intrusion while the claim is processed. Call 405-406-9830 as soon as the storm passes." },
   { question: "What are Class 4 impact-resistant shingles?", answer: "They're shingles rated to withstand 2-inch steel ball impact tests. They significantly reduce hail damage and most Oklahoma insurance carriers give 15–28% premium discounts when you install them. Long-term, they pay for themselves." },
 ];
 
@@ -25,13 +25,13 @@ const HailDamageRepair = () => (
   <>
     <SEOHead
       title="Hail Damage Roof Repair Moore OK | Redwood Construction"
-      description="Hail damage roof repair in Moore OK — free inspections, insurance claim help, full replacement. Call 405-760-9706 after any storm."
+      description="Hail damage roof repair in Moore OK — free inspections, insurance claim help, full replacement. Call 405-406-9830 after any storm."
       canonical="/hail-damage-roof-repair-moore-ok"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "Hail Damage Roof Repair Moore OK",
-        "provider": { "@type": "GeneralContractor", "name": "Redwood Construction Pros", "telephone": "+1-405-760-9706" },
+        "provider": { "@type": "GeneralContractor", "name": "Redwood Construction Pros", "telephone": "+1-405-406-9830" },
         "areaServed": { "@type": "City", "name": "Moore" },
         "serviceType": "Hail Damage Roof Repair",
       }}

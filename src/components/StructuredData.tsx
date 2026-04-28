@@ -36,16 +36,8 @@ export const localBusinessSchema: JsonLdSchema = {
   name: "Redwood Construction Pros",
   image: `${SITE_URL}/logo.webp`,
   url: SITE_URL,
-  telephone: "REPLACE-WITH-YOUR-PHONE",
-  email: "REPLACE-WITH-YOUR-EMAIL",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "REPLACE-WITH-YOUR-STREET",
-    addressLocality: "Oklahoma City",
-    addressRegion: "OK",
-    postalCode: "REPLACE",
-    addressCountry: "US",
-  },
+  telephone: "+1-405-406-9830",
+  email: "jose@redwoodconstructionpros.com",
   geo: {
     "@type": "GeoCoordinates",
     latitude: 35.4676,

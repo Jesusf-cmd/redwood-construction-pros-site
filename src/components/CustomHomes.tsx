@@ -1,7 +1,7 @@
 import { Phone } from "lucide-react";
 
-const PHONE = "4057609706";
-const PHONE_DISPLAY = "405-760-9706";
+const PHONE = "4054069830";
+const PHONE_DISPLAY = "405-406-9830";
 
 const CustomHomes = () => (
   <section id="custom-homes" className="section-pad bg-background">

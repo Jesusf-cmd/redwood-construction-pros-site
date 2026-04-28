@@ -4,8 +4,8 @@ import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/FAQSection";
 import PageCTA from "@/components/PageCTA";
 
-const PHONE = "4057609706";
-const PHONE_DISPLAY = "405-760-9706";
+const PHONE = "4054069830";
+const PHONE_DISPLAY = "405-406-9830";
 
 const faqs = [
   { question: "How much does a barndominium cost in Oklahoma?", answer: "Barndominiums in Oklahoma run $40–$80 per square foot for the shell (slab, steel frame, exterior panels) and $80–$150 per square foot for a fully finished turnkey build with interior living space, plumbing, electrical, and HVAC." },
@@ -24,13 +24,13 @@ const BarndominiumBuilder = () => (
   <>
     <SEOHead
       title="Barndominium Builder Oklahoma | Redwood Construction"
-      description="Barndominium builder in Oklahoma — slab, steel frame, interior finish. Shell or turnkey. 8–14 weeks. Call 405-760-9706."
+      description="Barndominium builder in Oklahoma — slab, steel frame, interior finish. Shell or turnkey. 8–14 weeks. Call 405-406-9830."
       canonical="/barndominium-builder-oklahoma"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "Barndominium Builder Oklahoma",
-        "provider": { "@type": "GeneralContractor", "name": "Redwood Construction Pros", "telephone": "+1-405-760-9706" },
+        "provider": { "@type": "GeneralContractor", "name": "Redwood Construction Pros", "telephone": "+1-405-406-9830" },
         "areaServed": { "@type": "State", "name": "Oklahoma" },
         "serviceType": "Barndominium Construction",
       }}

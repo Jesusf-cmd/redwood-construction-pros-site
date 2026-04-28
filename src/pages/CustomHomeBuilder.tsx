@@ -4,8 +4,8 @@ import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/FAQSection";
 import PageCTA from "@/components/PageCTA";
 
-const PHONE = "4057609706";
-const PHONE_DISPLAY = "405-760-9706";
+const PHONE = "4054069830";
+const PHONE_DISPLAY = "405-406-9830";
 
 const faqs = [
   { question: "How much does a custom home cost in Moore OK?", answer: "Custom homes in the Moore and OKC area run $120–$200 per square foot depending on site prep, foundation complexity, finish level, and material choices. A 2,000 sq ft home typically runs $240,000–$400,000." },
@@ -24,13 +24,13 @@ const CustomHomeBuilder = () => (
   <>
     <SEOHead
       title="Custom Home Builder Moore OK | Redwood Construction"
-      description="Custom home builder in Moore OK — foundation to finish. Concrete, framing, turnkey builds. $120–$200/sq ft. Call 405-760-9706."
+      description="Custom home builder in Moore OK — foundation to finish. Concrete, framing, turnkey builds. $120–$200/sq ft. Call 405-406-9830."
       canonical="/custom-home-builder-moore-ok"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "Custom Home Builder Moore OK",
-        "provider": { "@type": "GeneralContractor", "name": "Redwood Construction Pros", "telephone": "+1-405-760-9706" },
+        "provider": { "@type": "GeneralContractor", "name": "Redwood Construction Pros", "telephone": "+1-405-406-9830" },
         "areaServed": [{ "@type": "City", "name": "Moore" }, { "@type": "City", "name": "Oklahoma City" }],
         "serviceType": "Custom Home Building",
       }}

@@ -60,7 +60,7 @@ const RoofingHubPage = () => (
       </p>
     </ContentSection>
     <ProcessSteps heading="Our Roofing Process" steps={process} />
-    <CTABanner heading="Need Roofing Help in Oklahoma City?" subtext="Call Redwood for a free roof inspection, repair estimate, or replacement consultation." phoneNumber="405-760-9706" formLink="/contact" />
+    <CTABanner heading="Need Roofing Help in Oklahoma City?" subtext="Call Redwood for a free roof inspection, repair estimate, or replacement consultation." phoneNumber="405-406-9830" formLink="/contact" />
     <FAQSection faqs={faqs} heading="Roofing Services FAQ" />
   </>
 );

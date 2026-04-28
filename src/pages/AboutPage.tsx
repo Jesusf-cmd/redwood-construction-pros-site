@@ -4,7 +4,7 @@ import ContentSection from "@/components/ContentSection";
 import CTABanner from "@/components/CTABanner";
 import TrustSignals from "@/components/TrustSignals";
 
-const PHONE_DISPLAY = "405-760-9706";
+const PHONE_DISPLAY = "405-406-9830";
 
 const AboutPage = () => (
   <>

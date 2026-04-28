@@ -54,7 +54,7 @@ const FramingHubPage = () => (
         Wood framing is usually cheaper upfront and remains the standard for most residential framing because it is flexible, familiar, easy to modify, and has natural R-value compared with steel. It works well for homes, additions, garages, and custom roof structures when protected from moisture and termites. Metal framing is stronger per weight, dimensionally stable, fire resistant, pest proof, and fast for commercial interiors and straight partition layouts. Steel studs do not rot or twist like lumber, but metal conducts heat and often requires thermal breaks or careful insulation detailing in exterior assemblies. For restaurants, offices, retail build-outs, multi-family corridors, and fire-rated walls, <Link to="/framing/metal-framing" className="font-bold text-accent no-underline hover:underline">metal framing</Link> is often the better choice. For traditional homes and additions, <Link to="/framing/residential" className="font-bold text-accent no-underline hover:underline">residential wood framing</Link> may be more cost-effective. The right answer depends on code, budget, fire rating, span, finish requirements, and how the building will be used.
       </p>
     </ContentSection>
-    <CTABanner heading="Need a Framing Contractor in Oklahoma City?" subtext="Call Redwood for a free framing estimate, plan review, or construction scope consultation." phoneNumber="405-760-9706" formLink="/contact" />
+    <CTABanner heading="Need a Framing Contractor in Oklahoma City?" subtext="Call Redwood for a free framing estimate, plan review, or construction scope consultation." phoneNumber="405-406-9830" formLink="/contact" />
     <FAQSection faqs={faqs} heading="Framing Services FAQ" />
   </>
 );

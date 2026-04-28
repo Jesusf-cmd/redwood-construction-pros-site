@@ -3,8 +3,8 @@ import { MapPin, Phone } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import PageCTA from "@/components/PageCTA";
 
-const PHONE = "4057609706";
-const PHONE_DISPLAY = "405-760-9706";
+const PHONE = "4054069830";
+const PHONE_DISPLAY = "405-406-9830";
 
 const areas = [
   { name: "Moore, OK", desc: "Our home base. We handle more roofing, custom home, and metal building projects in Moore than any other city. If you're in Moore, we're probably already working on your street.", primary: true },
@@ -25,13 +25,13 @@ const ServiceAreasPage = () => (
   <>
     <SEOHead
       title="Service Areas | Redwood Construction Pros Oklahoma"
-      description="Roofing, custom homes, and metal buildings in Moore OK, Oklahoma City, Edmond, Norman, Yukon, Mustang. Call 405-760-9706."
+      description="Roofing, custom homes, and metal buildings in Moore OK, Oklahoma City, Edmond, Norman, Yukon, Mustang. Call 405-406-9830."
       canonical="/service-areas"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "GeneralContractor",
         "name": "Redwood Construction Pros",
-        "telephone": "+1-405-760-9706",
+        "telephone": "+1-405-406-9830",
         "areaServed": areas.map((a) => ({ "@type": "City", "name": a.name.replace(", OK", "") })),
       }}
     />

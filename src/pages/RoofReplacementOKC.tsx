@@ -4,8 +4,8 @@ import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/FAQSection";
 import PageCTA from "@/components/PageCTA";
 
-const PHONE = "4057609706";
-const PHONE_DISPLAY = "405-760-9706";
+const PHONE = "4054069830";
+const PHONE_DISPLAY = "405-406-9830";
 
 const faqs = [
   { question: "How much does a roof replacement cost in Oklahoma City?", answer: "A full tear-off and re-roof in Oklahoma City runs $6–$10 per square foot. For a standard 2,000 sq ft home, expect $12,000–$20,000. Steep roofs, multiple layers, and upgraded materials push the cost higher." },
@@ -17,20 +17,20 @@ const faqs = [
   { question: "Will you work with my insurance company?", answer: "Yes. We handle the documentation, meet with your adjuster on-site, and make sure every damaged component gets included in the scope. We've worked with State Farm, Farmers, USAA, Allstate, and most Oklahoma carriers." },
   { question: "What warranty do you offer on roof replacements?", answer: "You get the manufacturer's warranty on materials (typically 25–50 years depending on the shingle) plus our workmanship warranty. We stand behind our installs — if something fails because of how we put it on, we fix it." },
   { question: "Do you install metal roofing in Oklahoma City?", answer: "Yes. We install standing seam and exposed fastener metal roofs. Metal roofing handles wind up to 140+ mph, lasts 40–60 years, and reflects heat — which cuts cooling costs in Oklahoma summers." },
-  { question: "How do I get started with a roof replacement?", answer: "Call or text 405-760-9706. We'll schedule an inspection, usually within 24–48 hours. After the inspection, you get a detailed estimate with line-item pricing. No pressure, no sales pitch." },
+  { question: "How do I get started with a roof replacement?", answer: "Call or text 405-406-9830. We'll schedule an inspection, usually within 24–48 hours. After the inspection, you get a detailed estimate with line-item pricing. No pressure, no sales pitch." },
 ];
 
 const RoofReplacementOKC = () => (
   <>
     <SEOHead
       title="Roof Replacement Oklahoma City | Redwood Construction"
-      description="Roof replacement in Oklahoma City — full tear-off, asphalt & metal roofing, insurance claims. $6–$10/sq ft. Call 405-760-9706."
+      description="Roof replacement in Oklahoma City — full tear-off, asphalt & metal roofing, insurance claims. $6–$10/sq ft. Call 405-406-9830."
       canonical="/roof-replacement-oklahoma-city"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "Roof Replacement Oklahoma City",
-        "provider": { "@type": "GeneralContractor", "name": "Redwood Construction Pros", "telephone": "+1-405-760-9706" },
+        "provider": { "@type": "GeneralContractor", "name": "Redwood Construction Pros", "telephone": "+1-405-406-9830" },
         "areaServed": { "@type": "City", "name": "Oklahoma City" },
         "serviceType": "Roof Replacement",
       }}

@@ -21,8 +21,8 @@ import ProcessSteps from "@/components/ProcessSteps";
 import TrustSignals from "@/components/TrustSignals";
 import heroImg from "@/assets/hero-construction.jpg";
 
-const PHONE = "4057609706";
-const PHONE_DISPLAY = "405-760-9706";
+const PHONE = "4054069830";
+const PHONE_DISPLAY = "405-406-9830";
 
 const roofingServices = [
   {

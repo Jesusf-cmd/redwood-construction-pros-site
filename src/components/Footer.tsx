@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 
-const PHONE = "4057609706";
-const PHONE_DISPLAY = "405-760-9706";
+const PHONE = "4054069830";
+const PHONE_DISPLAY = "405-406-9830";
 const EMAIL = "jose@redwoodconstructionpros.com";
-const ADDRESS = "[OFFICE ADDRESS], Oklahoma City, OK";
 
 const groups = [
   { title: "Roofing", links: [
@@ -29,7 +28,6 @@ const Footer = () => (
         <div className="flex flex-col gap-2 text-sm font-medium">
           <a href={`tel:${PHONE}`} className="text-primary-foreground/70 no-underline transition-colors hover:text-accent">{PHONE_DISPLAY}</a>
           <a href={`mailto:${EMAIL}`} className="text-primary-foreground/70 no-underline transition-colors hover:text-accent">{EMAIL}</a>
-          <span className="text-primary-foreground/70">{ADDRESS}</span>
         </div>
       </div>
       {groups.map((group) => (
