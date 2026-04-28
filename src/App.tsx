@@ -84,6 +84,11 @@ const App = () => (
               <Route path="/framing/commercial" element={<CommercialFramingPage />} />
               <Route path="/framing/metal-framing" element={<MetalFramingPage />} />
               <Route path="/framing/custom-home" element={<CustomHomeFramingPage />} />
+              <Route path="/areas/oklahoma-city" element={<OklahomaCityAreaPage />} />
+              <Route path="/areas/edmond" element={<EdmondAreaPage />} />
+              <Route path="/areas/norman" element={<NormanAreaPage />} />
+              <Route path="/areas/moore" element={<MooreAreaPage />} />
+              <Route path="/areas/midwest-city" element={<MidwestCityAreaPage />} />
               {placeholderRoutes.map((route) => (
                 <Route
                   key={route.path}
