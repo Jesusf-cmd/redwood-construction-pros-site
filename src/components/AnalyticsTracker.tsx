@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { trackEvent } from "@/lib/analytics";
+import { trackEmailClick, trackEvent, trackFormSubmit, trackPhoneClick } from "@/lib/analytics";
 
 const SCROLL_THRESHOLDS = [25, 50, 75, 90];
 
@@ -39,6 +39,28 @@ const AnalyticsTracker = () => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [location.pathname, location.search, location.hash]);
+
+  useEffect(() => {
+    const handleDocumentClick = (event: MouseEvent) => {
+      const link = (event.target as Element | null)?.closest?.("a[href]") as HTMLAnchorElement | null;
+      const href = link?.getAttribute("href") ?? "";
+
+      if (href.startsWith("tel:")) trackPhoneClick();
+      if (href.startsWith("mailto:")) trackEmailClick();
+    };
+
+    const handleSubmit = () => {
+      trackFormSubmit();
+    };
+
+    document.addEventListener("click", handleDocumentClick);
+    document.addEventListener("submit", handleSubmit);
+
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+      document.removeEventListener("submit", handleSubmit);
+    };
+  }, []);
 
   return null;
 };
