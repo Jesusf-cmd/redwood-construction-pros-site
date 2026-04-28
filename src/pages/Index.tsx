@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Building2,
+  BookOpen,
   ClipboardCheck,
   Hammer,
   HardHat,
@@ -174,6 +175,24 @@ const relatedLinks = [
     path: "/framing/custom-home",
     icon: HardHat,
   },
+  {
+    title: "Metal Framing",
+    description: "Steel stud framing for commercial interiors, partitions, and durable assemblies.",
+    path: "/framing/metal-framing",
+    icon: Building2,
+  },
+  {
+    title: "About Redwood Construction Pros",
+    description: "Meet the locally owned Oklahoma City roofing and construction team behind the work.",
+    path: "/about",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Roofing & Construction Blog",
+    description: "Read Oklahoma City roofing, framing, storm prep, and construction planning guides.",
+    path: "/blog",
+    icon: BookOpen,
+  },
 ];
 
 const ServiceColumn = ({ title, services }: { title: string; services: typeof roofingServices }) => (
@@ -252,7 +271,7 @@ const Index = () => (
 
     <ContentSection id="what-we-do" heading="Full-Service Roofing & Construction in Oklahoma City">
       <p>
-        Redwood Construction Pros is a roofing contractor Oklahoma City homeowners can call when a job needs more than a quick patch. We handle roof repair, roof replacement, metal roofing, storm and hail damage restoration, and insurance claim support, but we also bring serious structural construction experience to the same project. That matters when roof damage exposes bad decking, weak framing, or bigger problems behind the surface. As a framing contractor OKC builders and property owners can rely on, Redwood also provides residential framing, commercial framing, metal framing, and custom home construction. Homeowners, investors, and builders do not have to coordinate separate crews for roofing, framing, and structural work. One construction company Oklahoma property owners can call handles inspection, planning, materials, scheduling, build-out, and final cleanup. The result is a cleaner process, stronger workmanship, and fewer delays from contractor handoffs.
+        Redwood Construction Pros is a roofing contractor Oklahoma City homeowners can call when a job needs more than a quick patch. We handle roof repair, roof replacement, metal roofing, storm and hail damage restoration, and insurance claim support, but we also bring serious structural construction experience to the same project. That matters when roof damage exposes bad decking, weak framing, or bigger problems behind the surface. As a framing contractor OKC builders and property owners can rely on, Redwood also provides residential framing, commercial framing, metal framing, and custom home construction. Homeowners, investors, and builders do not have to coordinate separate crews for roofing, framing, and structural work. One construction company Oklahoma property owners can call handles inspection, planning, materials, scheduling, build-out, and final cleanup. Learn more <Link to="/about" className="font-bold text-accent no-underline hover:underline">about Redwood Construction Pros</Link> or <Link to="/contact" className="font-bold text-accent no-underline hover:underline">request a free construction estimate</Link>. The result is a cleaner process, stronger workmanship, and fewer delays from contractor handoffs.
       </p>
     </ContentSection>
 
