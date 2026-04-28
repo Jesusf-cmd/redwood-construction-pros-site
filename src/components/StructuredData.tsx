@@ -38,14 +38,6 @@ export const localBusinessSchema: JsonLdSchema = {
   url: SITE_URL,
   telephone: "+1-405-406-9830",
   email: "jose@redwoodconstructionpros.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "REPLACE-WITH-YOUR-STREET",
-    addressLocality: "Oklahoma City",
-    addressRegion: "OK",
-    postalCode: "REPLACE",
-    addressCountry: "US",
-  },
   geo: {
     "@type": "GeoCoordinates",
     latitude: 35.4676,

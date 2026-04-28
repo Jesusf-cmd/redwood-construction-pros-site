@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
 import { z } from "zod";
 import { Link } from "react-router-dom";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/FAQSection";
 import { trackFormSubmit } from "@/lib/analytics";
@@ -15,7 +15,7 @@ const contactSchema = z.object({
   phone: z.string().trim().min(7, "Phone number is required").max(30, "Phone number must be under 30 characters"),
   email: z.string().trim().email("Enter a valid email address").max(255, "Email must be under 255 characters"),
   service: z.string().trim().min(1, "Select a service"),
-  address: z.string().trim().max(200, "Address must be under 200 characters").optional(),
+  location: z.string().trim().max(200, "Project location must be under 200 characters").optional(),
   message: z.string().trim().max(1000, "Message must be under 1000 characters").optional(),
 });
 
@@ -46,7 +46,7 @@ const ContactPage = () => {
       phone: form.get("phone"),
       email: form.get("email"),
       service: form.get("service"),
-      address: form.get("address") || undefined,
+      location: form.get("location") || undefined,
       message: form.get("message") || undefined,
     });
 
@@ -91,7 +91,7 @@ const ContactPage = () => {
               <label className="space-y-2 text-sm font-bold text-primary">Phone Number *<input name="phone" className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground" maxLength={30} /></label>
               <label className="space-y-2 text-sm font-bold text-primary">Email *<input name="email" type="email" className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground" maxLength={255} /></label>
               <label className="space-y-2 text-sm font-bold text-primary">Service Needed *<select name="service" className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground"><option value="">Select a service</option>{services.map((service) => <option key={service} value={service}>{service}</option>)}</select></label>
-              <label className="space-y-2 text-sm font-bold text-primary sm:col-span-2">Property Address<input name="address" className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground" maxLength={200} /></label>
+              <label className="space-y-2 text-sm font-bold text-primary sm:col-span-2">Project City or Neighborhood<input name="location" className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground" maxLength={200} /></label>
               <label className="space-y-2 text-sm font-bold text-primary sm:col-span-2">Message<textarea name="message" rows={5} className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground" maxLength={1000} /></label>
             </div>
             {Object.values(errors).length > 0 && <div className="mt-5 rounded-lg border border-destructive/30 bg-destructive/10 p-4 text-sm font-semibold text-destructive">{Object.values(errors)[0]}</div>}
@@ -105,17 +105,9 @@ const ContactPage = () => {
               <div className="space-y-4 text-sm font-semibold text-foreground">
                 <a href={`tel:${PHONE}`} className="flex items-center gap-3 text-primary no-underline hover:text-accent"><Phone className="h-5 w-5 text-accent" />{PHONE_DISPLAY}</a>
                 <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 break-all text-primary no-underline hover:text-accent"><Mail className="h-5 w-5 text-accent" />{EMAIL}</a>
-                <p className="flex items-center gap-3"><MapPin className="h-5 w-5 text-accent" />[OFFICE ADDRESS], Oklahoma City, OK</p>
                 <p>Business Hours: Mon–Sat 7:00 AM – 6:00 PM</p>
               </div>
             </div>
-            <iframe
-              title="Oklahoma City service area map for Redwood Construction Pros"
-              src="https://www.google.com/maps?q=35.4676,-97.5164&z=10&output=embed"
-              className="h-[320px] w-full rounded-lg border border-border"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
           </aside>
         </div>
       </section>
