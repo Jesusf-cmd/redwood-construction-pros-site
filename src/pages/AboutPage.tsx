@@ -1,111 +1,68 @@
 import { Link } from "react-router-dom";
-import { Phone, CheckCircle } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
-import PageCTA from "@/components/PageCTA";
+import ContentSection from "@/components/ContentSection";
+import CTABanner from "@/components/CTABanner";
+import TrustSignals from "@/components/TrustSignals";
 
-const PHONE = "4057609706";
 const PHONE_DISPLAY = "405-760-9706";
 
 const AboutPage = () => (
   <>
     <SEOHead
-      title="About Redwood Construction Pros | Moore OK Contractor"
-      description="Learn about Redwood Construction Pros in Moore OK for roofing, custom homes, and metal buildings. Call today for a free estimate."
+      title="About Redwood Construction Pros | Oklahoma City Contractor"
+      description="Meet Redwood Construction Pros — Oklahoma City's locally owned roofing and construction company. Licensed, insured, community-driven."
       canonical="/about"
     />
 
-    <section className="section-pad bg-primary">
-      <div className="max-w-[1200px] mx-auto">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-primary-foreground leading-[1.1] max-w-[800px] mb-6">
-          About Redwood Construction Pros — Moore, OK Contractor
+    <section className="section-pad bg-primary text-primary-foreground">
+      <div className="mx-auto max-w-[1200px]">
+        <h1 className="mb-6 max-w-[900px] text-4xl font-black leading-tight md:text-5xl lg:text-[58px]">
+          About Redwood Construction Pros
         </h1>
-        <p className="text-lg text-primary-foreground/80 max-w-[700px]">
-          Locally owned. Oklahoma-based crews. We build roofs, custom homes, and metal buildings across Moore and the OKC metro — and we do it differently than most contractors in this area.
+        <p className="max-w-[760px] text-lg font-medium leading-8 text-primary-foreground/80 md:text-xl">
+          Locally owned roofing, framing, and construction services built for Oklahoma City weather, codes, and property owners.
         </p>
       </div>
     </section>
 
-    <section className="section-pad bg-background">
-      <div className="max-w-[1200px] mx-auto">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-6">How We're Different</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              Most roofing companies in Oklahoma City don't pour concrete. Most home builders don't touch steel. Most metal building contractors don't know how to frame a house. We do all of it — with our own crew, under direct owner supervision.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              Redwood Construction Pros started from a concrete and structural background. That means we understand foundations, load paths, and how buildings actually hold together — not just how they look on the surface. When we put a roof on a house, we know the framing underneath because we built it. When we erect a steel building, we know the slab is right because we poured it.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              We don't run sales teams. There's no "project manager" between you and the crew. The owner is on-site, answers the phone, and makes decisions. That keeps jobs on schedule, on budget, and built right.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              We're based in Moore, Oklahoma and run crews across the OKC metro every day. Moore, Oklahoma City, Edmond, Norman, Yukon, Mustang — we know these cities, we know the soil conditions, we know what Oklahoma weather does to buildings, and we build accordingly.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-xl font-bold text-primary mb-4">What Sets Us Apart</h3>
-            <ul className="flex flex-col gap-4">
-              {[
-                "Concrete and structural background — we pour slabs, set steel, and frame walls",
-                "Owner on every job — no middleman, no miscommunication",
-                "Local Oklahoma crews — no imported labor from out of state",
-                "We handle roofing, homes, AND metal buildings — not just one thing",
-                "Transparent pricing — line-item estimates, no hidden change orders",
-                "We build for Oklahoma weather — hail, wind, tornado conditions, expansive soil",
-                "Faster scheduling than large contractors — we run lean and move quick",
-                "Insurance claim expertise — we've worked with every major carrier in Oklahoma",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground font-medium text-sm">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+    <TrustSignals />
 
-    <section className="section-pad bg-secondary">
-      <div className="max-w-[1200px] mx-auto">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-6">What We Build</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Link to="/roofing-moore-ok" className="p-6 rounded-xl bg-background border border-border hover:border-accent/30 transition-all no-underline group">
-            <h3 className="text-lg font-bold text-primary group-hover:text-accent transition-colors mb-2">Roofing</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Full roof replacement, hail damage repair, insurance claims, metal roofing. We tear off, inspect decking, and install systems built for Oklahoma storms.
-            </p>
-          </Link>
-          <Link to="/custom-home-builder-moore-ok" className="p-6 rounded-xl bg-background border border-border hover:border-accent/30 transition-all no-underline group">
-            <h3 className="text-lg font-bold text-primary group-hover:text-accent transition-colors mb-2">Custom Homes</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Ground-up custom homes — foundation, framing, roofing, finish. We control the slab and structure in-house. Turnkey delivery across Moore and OKC.
-            </p>
-          </Link>
-          <Link to="/metal-buildings-oklahoma-city" className="p-6 rounded-xl bg-background border border-border hover:border-accent/30 transition-all no-underline group">
-            <h3 className="text-lg font-bold text-primary group-hover:text-accent transition-colors mb-2">Metal Buildings & Barndominiums</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Steel shops, commercial buildings, and barndominiums. Concrete slab, steel frame, panels, insulation, and optional interior buildout.
-            </p>
-          </Link>
-        </div>
-      </div>
-    </section>
+    <ContentSection id="construction-partner" heading="Oklahoma City's Full-Service Construction Partner">
+      <p>
+        Redwood Construction Pros is a locally owned and operated Oklahoma City construction company serving homeowners, builders, and businesses across the OKC metro. We are not a franchise, and we are not a storm-chasing crew from out of state that disappears after hail season. Redwood was founded by [OWNER NAME] with a mission to provide honest, high-quality construction services to Oklahoma property owners who need practical answers, clean work, and reliable follow-through. Our team handles both <Link to="/roofing" className="font-bold text-accent no-underline hover:underline">roofing services in Oklahoma City</Link> and <Link to="/framing" className="font-bold text-accent no-underline hover:underline">framing services in OKC</Link> because we believe one company should be able to build it right from the ground up. When roof damage exposes bad decking, weak framing, or storm-related structural issues, we understand how the whole building works together. That construction-first mindset helps homeowners avoid finger-pointing between trades and gives builders a dependable partner for roofing, framing, custom homes, and repair scopes.
+      </p>
+    </ContentSection>
 
-    <section className="section-pad bg-background">
-      <div className="max-w-[1200px] mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-6">Based in Moore, OK — Serving the OKC Metro</h2>
-        <p className="text-lg text-muted-foreground max-w-[600px] mx-auto mb-8">
-          Moore, Oklahoma City, Edmond, Norman, Yukon, Mustang, and surrounding areas. We run crews across the metro daily and respond to calls fast.
-        </p>
-        <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-bold px-8 py-4 rounded-lg no-underline hover:bg-orange-hover transition-colors">
-          <Phone className="w-5 h-5" /> Call: {PHONE_DISPLAY}
-        </a>
-      </div>
-    </section>
+    <ContentSection id="values" heading="What We Stand For">
+      <p>
+        Redwood is built around honest assessments. If a roof repair will solve the problem, we will not push a full replacement. If framing needs engineered attention, we will say so before finishes cover the issue. We use quality materials because Oklahoma hail, heat, wind, and moisture punish cheap products. Our pricing is transparent, with no hidden fees, no bait-and-switch estimates, and no vague scope language designed to create change orders later. Local accountability matters to us because we live and work in the Oklahoma City metro. Our reputation is tied to every roof, framed wall, jobsite cleanup, and final walkthrough. We also believe clean job sites are part of professional construction. Nails, debris, torn-off shingles, and scrap material should not be left behind for the homeowner to handle. Redwood's standard is simple: tell the truth, build it correctly, and leave the property better than we found it.
+      </p>
+    </ContentSection>
 
-    <PageCTA />
+    <ContentSection id="credentials" heading="Licensed, Insured & Oklahoma Certified">
+      <p>
+        Redwood Construction Pros is a fully licensed contractor in the state of Oklahoma and carries general liability and workers' compensation insurance for professional roofing, framing, and construction work. License Number: [LICENSE NUMBER]. Our crews work in compliance with Oklahoma City requirements, Oklahoma state building codes, local permit rules, inspection standards, wind-bracing expectations, and manufacturer installation specifications. Credentials matter because roofing and framing errors can affect insurance, resale, structural performance, and long-term property value.
+      </p>
+    </ContentSection>
+
+    <ContentSection id="service-areas" heading="Serving the OKC Metro">
+      <p>
+        Redwood serves <Link to="/areas/oklahoma-city" className="font-bold text-accent no-underline hover:underline">Oklahoma City</Link>, <Link to="/areas/edmond" className="font-bold text-accent no-underline hover:underline">Edmond</Link>, <Link to="/areas/norman" className="font-bold text-accent no-underline hover:underline">Norman</Link>, <Link to="/areas/moore" className="font-bold text-accent no-underline hover:underline">Moore</Link>, <Link to="/areas/midwest-city" className="font-bold text-accent no-underline hover:underline">Midwest City</Link>, Yukon, Del City, and surrounding communities. From roof inspections after severe weather to residential framing, commercial framing, and custom home construction, our crews understand the local soil, storm patterns, permit processes, and neighborhood expectations across the Oklahoma City metropolitan area.
+      </p>
+    </ContentSection>
+
+    <ContentSection id="community" heading="Our Commitment to the Oklahoma City Community">
+      <p>
+        Redwood Construction Pros is committed to investing in the Oklahoma City community that supports our work. [COMMUNITY INVOLVEMENT PLACEHOLDER — add local organizations, sponsorships, volunteer work, or partnerships here.] Our values include fair hiring, respectful jobsite conduct, honest communication, and support for local organizations whenever possible. We want every homeowner, builder, and business owner we serve to feel like they hired a local contractor with a long-term stake in the community — not a temporary crew chasing the next storm.
+      </p>
+    </ContentSection>
+
+    <CTABanner
+      heading="Talk With a Local OKC Contractor"
+      subtext="Call Redwood for a free roofing, framing, or construction estimate from a team that understands Oklahoma City homes."
+      phoneNumber={PHONE_DISPLAY}
+      formLink="/contact"
+    />
   </>
 );
 
