@@ -26,6 +26,12 @@ const MetalRoofingPage = lazy(() => import("./pages/roofing/MetalRoofingPage"));
 const StormDamagePage = lazy(() => import("./pages/roofing/StormDamagePage"));
 const HailDamagePage = lazy(() => import("./pages/roofing/HailDamagePage"));
 const InsuranceClaimsPage = lazy(() => import("./pages/roofing/InsuranceClaimsPage"));
+const RoofingHubPage = lazy(() => import("./pages/RoofingHubPage"));
+const FramingHubPage = lazy(() => import("./pages/FramingHubPage"));
+const ResidentialFramingPage = lazy(() => import("./pages/framing/ResidentialFramingPage"));
+const CommercialFramingPage = lazy(() => import("./pages/framing/CommercialFramingPage"));
+const MetalFramingPage = lazy(() => import("./pages/framing/MetalFramingPage"));
+const CustomHomeFramingPage = lazy(() => import("./pages/framing/CustomHomeFramingPage"));
 
 const queryClient = new QueryClient();
 
@@ -36,12 +42,6 @@ const PageLoader = () => (
 );
 
 const placeholderRoutes = [
-  { path: "/roofing", title: "Roofing Services in Oklahoma City", seoTitle: "Roofing Contractor OKC | Redwood Construction Pros", description: "Roof repair, replacement, metal roofing, and storm work in Oklahoma City. Call Redwood Construction Pros for a free inspection." },
-  { path: "/framing", title: "Framing Services in Oklahoma City", seoTitle: "Framing Contractor OKC | Redwood Construction Pros", description: "Framing services in OKC for homes, additions, commercial spaces, and metal framing. Call today for a construction estimate." },
-  { path: "/framing/residential", title: "Residential House Framing OKC", seoTitle: "Residential House Framing OKC | Redwood Pros", description: "Residential house framing in Oklahoma City for new homes, additions, garages, and roof structures. Call for a free estimate.", serviceType: "Residential Framing", serviceDescription: "Residential framing services in Oklahoma City for new homes, additions, garages, wall framing, roof framing, and structural carpentry." },
-  { path: "/framing/commercial", title: "Commercial Framing OKC", seoTitle: "Commercial Framing OKC | Redwood Construction Pros", description: "Commercial framing in OKC for tenant build-outs, offices, retail, and structural scopes. Call today for a project estimate.", serviceType: "Commercial Framing", serviceDescription: "Commercial framing services in Oklahoma City for tenant build-outs, office spaces, retail projects, structural scopes, and jobsite framing packages." },
-  { path: "/framing/metal-framing", title: "Metal Framing Oklahoma City", seoTitle: "Metal Framing OKC | Redwood Construction Pros", description: "Metal framing in Oklahoma City for commercial interiors, partitions, and steel stud assemblies. Call for a free estimate.", serviceType: "Metal Framing", serviceDescription: "Metal framing services in Oklahoma City for commercial interiors, steel stud walls, partitions, soffits, and durable framing assemblies." },
-  { path: "/framing/custom-home", title: "Custom Home Framing OKC", seoTitle: "Custom Home Framing OKC | Redwood Pros", description: "Custom home framing in OKC for walls, roof systems, additions, and ground-up builds. Call today for a framing estimate.", serviceType: "Custom Home Framing", serviceDescription: "Custom home framing services in Oklahoma City for ground-up builds, additions, wall systems, roof systems, and structural framing scopes." },
   { path: "/areas/oklahoma-city", title: "Oklahoma City Construction Services", seoTitle: "OKC Roofing & Framing | Redwood Construction Pros", description: "Roofing, framing, custom homes, and metal buildings in Oklahoma City. Call Redwood Construction Pros for a free estimate." },
   { path: "/areas/edmond", title: "Edmond Construction Services", seoTitle: "Edmond Roofing & Framing | Redwood Construction Pros", description: "Roofing, framing, custom homes, and metal buildings in Edmond, OK. Call Redwood Construction Pros for a free estimate." },
   { path: "/areas/norman", title: "Norman Construction Services", seoTitle: "Norman Roofing & Framing | Redwood Construction Pros", description: "Roofing, framing, custom homes, and metal buildings in Norman, OK. Call Redwood Construction Pros for a free estimate." },
@@ -72,12 +72,18 @@ const App = () => (
               <Route path="/service-areas" element={<ServiceAreasPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/roofing" element={<RoofingHubPage />} />
               <Route path="/roofing/roof-repair" element={<RoofRepairPage />} />
               <Route path="/roofing/roof-replacement" element={<RoofReplacementPage />} />
               <Route path="/roofing/metal-roofing" element={<MetalRoofingPage />} />
               <Route path="/roofing/storm-damage" element={<StormDamagePage />} />
               <Route path="/roofing/hail-damage" element={<HailDamagePage />} />
               <Route path="/roofing/insurance-claims" element={<InsuranceClaimsPage />} />
+              <Route path="/framing" element={<FramingHubPage />} />
+              <Route path="/framing/residential" element={<ResidentialFramingPage />} />
+              <Route path="/framing/commercial" element={<CommercialFramingPage />} />
+              <Route path="/framing/metal-framing" element={<MetalFramingPage />} />
+              <Route path="/framing/custom-home" element={<CustomHomeFramingPage />} />
               {placeholderRoutes.map((route) => (
                 <Route
                   key={route.path}
