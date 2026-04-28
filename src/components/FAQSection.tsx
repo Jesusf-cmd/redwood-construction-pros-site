@@ -44,7 +44,7 @@ const FAQSection = ({ faqs, heading = "Frequently Asked Questions" }: FAQSection
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="border-border">
                 <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:text-accent hover:no-underline py-5">
-                  <h3 className="text-base font-semibold">{faq.question}</h3>
+                  {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-base leading-relaxed">
                   {faq.answer}
