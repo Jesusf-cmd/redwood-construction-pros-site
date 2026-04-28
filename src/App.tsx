@@ -37,6 +37,8 @@ const EdmondAreaPage = lazy(() => import("./pages/areas/EdmondAreaPage"));
 const NormanAreaPage = lazy(() => import("./pages/areas/NormanAreaPage"));
 const MooreAreaPage = lazy(() => import("./pages/areas/MooreAreaPage"));
 const MidwestCityAreaPage = lazy(() => import("./pages/areas/MidwestCityAreaPage"));
+const BlogPage = lazy(() => import("./pages/BlogPage"));
+const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
 
 const queryClient = new QueryClient();
 
@@ -46,10 +48,7 @@ const PageLoader = () => (
   </div>
 );
 
-const placeholderRoutes = [
-  { path: "/blog", title: "Construction Blog", seoTitle: "Construction Blog OKC | Redwood Construction Pros", description: "Read roofing, framing, storm damage, and construction planning tips for Oklahoma City. Call today for a free estimate." },
-  { path: "/projects", title: "Project Gallery", seoTitle: "Construction Projects OKC | Redwood Construction Pros", description: "View roofing, framing, custom home, and metal building projects in Oklahoma City. Call today for a free construction estimate." },
-];
+const placeholderRoutes = [];
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -89,6 +88,8 @@ const App = () => (
               <Route path="/areas/norman" element={<NormanAreaPage />} />
               <Route path="/areas/moore" element={<MooreAreaPage />} />
               <Route path="/areas/midwest-city" element={<MidwestCityAreaPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
               {placeholderRoutes.map((route) => (
                 <Route
                   key={route.path}
