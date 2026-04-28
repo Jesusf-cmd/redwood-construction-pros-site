@@ -50,13 +50,13 @@ Deno.serve(async (req) => {
     return json({ error: 'Prerender token is not configured' }, 500)
   }
 
-  let body: z.infer<typeof BotRequestSchema> | undefined
+  let body: PrerenderRequestBody | undefined
   if (req.method === 'POST') {
-    const parsed = BotRequestSchema.safeParse(await req.json().catch(() => ({})))
-    if (!parsed.success) {
-      return json({ error: parsed.error.flatten().fieldErrors }, 400)
+    const parsed = await req.json().catch(() => ({}))
+    if (!isValidBody(parsed)) {
+      return json({ error: 'Body must include optional string fields: url or path' }, 400)
     }
-    body = parsed.data
+    body = parsed
   }
 
   let targetUrl: URL
