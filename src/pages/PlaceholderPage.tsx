@@ -4,11 +4,12 @@ interface PlaceholderPageProps {
   title: string;
   description: string;
   canonical: string;
+  seoTitle?: string;
 }
 
-const PlaceholderPage = ({ title, description, canonical }: PlaceholderPageProps) => (
+const PlaceholderPage = ({ title, description, canonical, seoTitle }: PlaceholderPageProps) => (
   <>
-    <SEOHead title={`${title} | Redwood Construction Pros`} description={description} canonical={canonical} />
+    <SEOHead title={seoTitle ?? `${title} | Redwood Construction Pros`} description={description} canonical={canonical} />
     <section className="bg-background py-20 md:py-28">
       <div className="mx-auto max-w-4xl px-6">
         <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-primary">Redwood Construction Pros</p>

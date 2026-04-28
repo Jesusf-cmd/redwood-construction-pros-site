@@ -10,7 +10,7 @@ const AboutPage = () => (
   <>
     <SEOHead
       title="About Redwood Construction Pros | Moore OK Contractor"
-      description="About Redwood Construction Pros — locally owned roofing, custom home, and metal building contractor in Moore OK. Concrete and structural specialists."
+      description="Learn about Redwood Construction Pros in Moore OK for roofing, custom homes, and metal buildings. Call today for a free estimate."
       canonical="/about"
     />
 
