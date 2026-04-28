@@ -31,17 +31,25 @@ type RoofingPageConfig = {
 
 const P = ({ item }: { item: Paragraph }) => {
   if (typeof item === "string") return <p>{item}</p>;
-  const segments = item.links.reduce<(string | JSX.Element)[]>((parts, link, index) => {
-    const source = parts.flatMap((part) => typeof part === "string" ? part.split(link.label) : [part]);
-    const rebuilt: (string | JSX.Element)[] = [];
-    source.forEach((part, partIndex) => {
-      rebuilt.push(part);
-      if (typeof part === "string" && partIndex < source.length - 1) {
-        rebuilt.push(<Link key={`${link.path}-${index}-${partIndex}`} to={link.path} className="font-bold text-accent no-underline hover:underline">{link.label}</Link>);
-      }
-    });
-    return rebuilt;
-  }, [item.text]);
+  const segments: (string | JSX.Element)[] = [item.text];
+
+  item.links.forEach((link, linkIndex) => {
+    for (let index = 0; index < segments.length; index += 1) {
+      const segment = segments[index];
+      if (typeof segment !== "string" || !segment.includes(link.label)) continue;
+
+      const split = segment.split(link.label);
+      const replacement: (string | JSX.Element)[] = [];
+      split.forEach((text, partIndex) => {
+        replacement.push(text);
+        if (partIndex < split.length - 1) {
+          replacement.push(<Link key={`${link.path}-${linkIndex}-${index}-${partIndex}`} to={link.path} className="font-bold text-accent no-underline hover:underline">{link.label}</Link>);
+        }
+      });
+      segments.splice(index, 1, ...replacement);
+    }
+  });
+
   return <p>{segments}</p>;
 };
 
