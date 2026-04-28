@@ -23,6 +23,12 @@ const PlaceholderPage = lazy(() => import("./pages/PlaceholderPage"));
 
 const queryClient = new QueryClient();
 
+const PageLoader = () => (
+  <div className="min-h-[40vh] bg-background px-6 py-24 text-center text-sm font-semibold text-muted-foreground">
+    Loading...
+  </div>
+);
+
 const placeholderRoutes = [
   { path: "/roofing", title: "Roofing Services in Oklahoma City", seoTitle: "Roofing Contractor OKC | Redwood Construction Pros", description: "Roof repair, replacement, metal roofing, and storm work in Oklahoma City. Call Redwood Construction Pros for a free inspection." },
   { path: "/roofing/roof-repair", title: "Roof Repair in Oklahoma City", seoTitle: "Roof Repair OKC | Redwood Construction Pros", description: "Roof repair in Oklahoma City for leaks, missing shingles, flashing, and storm damage. Call today for a free roof inspection.", serviceType: "Roof Repair", serviceDescription: "Professional roof repair services in Oklahoma City. Storm damage repair, leak repair, shingle replacement, and emergency roof repairs." },
@@ -54,26 +60,28 @@ const App = () => (
         <AnalyticsTracker />
         <StructuredData />
         <Layout>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/roofing-moore-ok" element={<RoofingMooreOK />} />
-            <Route path="/roof-replacement-oklahoma-city" element={<RoofReplacementOKC />} />
-            <Route path="/hail-damage-roof-repair-moore-ok" element={<HailDamageRepair />} />
-            <Route path="/custom-home-builder-moore-ok" element={<CustomHomeBuilder />} />
-            <Route path="/metal-buildings-oklahoma-city" element={<MetalBuildingsOKC />} />
-            <Route path="/barndominium-builder-oklahoma" element={<BarndominiumBuilder />} />
-            <Route path="/service-areas" element={<ServiceAreasPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            {placeholderRoutes.map((route) => (
-              <Route
-                key={route.path}
-                path={route.path}
-                element={<PlaceholderPage {...route} canonical={route.path} />}
-              />
-            ))}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/roofing-moore-ok" element={<RoofingMooreOK />} />
+              <Route path="/roof-replacement-oklahoma-city" element={<RoofReplacementOKC />} />
+              <Route path="/hail-damage-roof-repair-moore-ok" element={<HailDamageRepair />} />
+              <Route path="/custom-home-builder-moore-ok" element={<CustomHomeBuilder />} />
+              <Route path="/metal-buildings-oklahoma-city" element={<MetalBuildingsOKC />} />
+              <Route path="/barndominium-builder-oklahoma" element={<BarndominiumBuilder />} />
+              <Route path="/service-areas" element={<ServiceAreasPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              {placeholderRoutes.map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={<PlaceholderPage {...route} canonical={route.path} />}
+                />
+              ))}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </Layout>
       </BrowserRouter>
     </TooltipProvider>
