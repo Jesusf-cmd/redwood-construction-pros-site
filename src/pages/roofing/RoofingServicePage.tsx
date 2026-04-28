@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Home, ShieldCheck, Wrench, CloudLightning, CircleDollarSign, Warehouse } from "lucide-react";
+import { Home, ShieldCheck, Wrench, CloudLightning, CircleDollarSign, Warehouse, LucideIcon } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import ServicePageHero from "@/components/ServicePageHero";
 import TrustSignals from "@/components/TrustSignals";
@@ -21,12 +21,15 @@ type RoofingPageConfig = {
   h1: string;
   subtitle: string;
   imageAlt: string;
+  parentLabel?: string;
+  parentPath?: string;
+  relatedHeading?: string;
   sections: { id: string; heading: string; paragraphs: Paragraph[] }[];
   processHeading: string;
   process: { number: number; title: string; description: string }[];
   cta: { heading: string; subtext: string };
   faqs: FAQItem[];
-  related: { title: string; description: string; path: string; icon: typeof Home }[];
+  related: { title: string; description: string; path: string; icon: LucideIcon }[];
 };
 
 const P = ({ item }: { item: Paragraph }) => {
@@ -53,9 +56,9 @@ const P = ({ item }: { item: Paragraph }) => {
   return <p>{segments}</p>;
 };
 
-const baseCrumbs = (current: string) => [
+const baseCrumbs = (current: string, parentLabel = "Roofing", parentPath = "/roofing") => [
   { label: "Home", path: "/" },
-  { label: "Roofing", path: "/roofing" },
+  { label: parentLabel, path: parentPath },
   { label: current, path: "#" },
 ];
 
@@ -67,7 +70,7 @@ export const RoofingServicePage = ({ config }: { config: RoofingPageConfig }) =>
       subtitle={config.subtitle}
       backgroundImage={heroImg}
       imageAlt={config.imageAlt}
-      breadcrumbs={baseCrumbs(config.h1.replace(" in Oklahoma City, OK", "").replace(" in Oklahoma City", ""))}
+      breadcrumbs={baseCrumbs(config.h1.replace(" in Oklahoma City, OK", "").replace(" in Oklahoma City", ""), config.parentLabel, config.parentPath)}
     />
     <TrustSignals />
     {config.sections.slice(0, 2).map((section) => (
@@ -83,7 +86,7 @@ export const RoofingServicePage = ({ config }: { config: RoofingPageConfig }) =>
     ))}
     <CTABanner heading={config.cta.heading} subtext={config.cta.subtext} phoneNumber={PHONE} formLink="/contact" />
     <FAQSection faqs={config.faqs} heading={`${config.h1} FAQ`} />
-    <InternalLinkGrid links={config.related} heading="Related Roofing Services" />
+    <InternalLinkGrid links={config.related} heading={config.relatedHeading ?? "Related Roofing Services"} />
   </>
 );
 
