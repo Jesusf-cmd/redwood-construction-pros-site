@@ -20,6 +20,12 @@ const ContactPage = lazy(() => import("./pages/ContactPage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const PlaceholderPage = lazy(() => import("./pages/PlaceholderPage"));
+const RoofRepairPage = lazy(() => import("./pages/roofing/RoofRepairPage"));
+const RoofReplacementPage = lazy(() => import("./pages/roofing/RoofReplacementPage"));
+const MetalRoofingPage = lazy(() => import("./pages/roofing/MetalRoofingPage"));
+const StormDamagePage = lazy(() => import("./pages/roofing/StormDamagePage"));
+const HailDamagePage = lazy(() => import("./pages/roofing/HailDamagePage"));
+const InsuranceClaimsPage = lazy(() => import("./pages/roofing/InsuranceClaimsPage"));
 
 const queryClient = new QueryClient();
 
@@ -31,12 +37,6 @@ const PageLoader = () => (
 
 const placeholderRoutes = [
   { path: "/roofing", title: "Roofing Services in Oklahoma City", seoTitle: "Roofing Contractor OKC | Redwood Construction Pros", description: "Roof repair, replacement, metal roofing, and storm work in Oklahoma City. Call Redwood Construction Pros for a free inspection." },
-  { path: "/roofing/roof-repair", title: "Roof Repair in Oklahoma City", seoTitle: "Roof Repair OKC | Redwood Construction Pros", description: "Roof repair in Oklahoma City for leaks, missing shingles, flashing, and storm damage. Call today for a free roof inspection.", serviceType: "Roof Repair", serviceDescription: "Professional roof repair services in Oklahoma City. Storm damage repair, leak repair, shingle replacement, and emergency roof repairs." },
-  { path: "/roofing/roof-replacement", title: "Roof Replacement in Oklahoma City", seoTitle: "Roof Replacement OKC | Redwood Construction Pros", description: "Full roof replacement in Oklahoma City for aging, leaking, or hail-damaged roofs. Call today for a free inspection.", serviceType: "Roof Replacement", serviceDescription: "Professional roof replacement services in Oklahoma City for aging roofs, hail-damaged roofs, tear-offs, and full roofing system installs." },
-  { path: "/roofing/metal-roofing", title: "Metal Roofing OKC", seoTitle: "Metal Roofing OKC | Redwood Construction Pros", description: "Metal roofing in OKC for homes, shops, barns, and commercial buildings. Call Redwood Construction Pros for a free estimate.", serviceType: "Metal Roofing", serviceDescription: "Metal roofing services in Oklahoma City for homes, shops, barns, commercial buildings, and long-lasting roofing upgrades." },
-  { path: "/roofing/storm-damage", title: "Storm Damage Repair OKC", seoTitle: "Storm Damage Roof Repair OKC | Redwood Pros", description: "Storm damage roof repair in OKC for wind, hail, leaks, lifted shingles, and emergency tarping. Call for a free inspection.", serviceType: "Storm Damage Repair", serviceDescription: "Storm damage roof repair in Oklahoma City for wind damage, lifted shingles, leaks, emergency tarping, and post-storm roof inspections." },
-  { path: "/roofing/hail-damage", title: "Hail Damage Roof Repair", seoTitle: "Hail Damage Roof Repair OKC | Redwood Pros", description: "Hail damage roof repair in Oklahoma City with inspection photos and repair planning. Call today for a free roof inspection.", serviceType: "Hail Damage Repair", serviceDescription: "Hail damage roof repair services in Oklahoma City with roof inspections, repair planning, shingle replacement, and storm damage documentation." },
-  { path: "/roofing/insurance-claims", title: "Insurance Claims Assistance", seoTitle: "Roof Insurance Claims OKC | Redwood Pros", description: "Roof insurance claim help in OKC for hail, wind, leaks, and damaged shingles. Call Redwood Construction Pros for support.", serviceType: "Insurance Claims Assistance", serviceDescription: "Roof insurance claims assistance in Oklahoma City for hail damage, wind damage, leaks, damaged shingles, and repair documentation." },
   { path: "/framing", title: "Framing Services in Oklahoma City", seoTitle: "Framing Contractor OKC | Redwood Construction Pros", description: "Framing services in OKC for homes, additions, commercial spaces, and metal framing. Call today for a construction estimate." },
   { path: "/framing/residential", title: "Residential House Framing OKC", seoTitle: "Residential House Framing OKC | Redwood Pros", description: "Residential house framing in Oklahoma City for new homes, additions, garages, and roof structures. Call for a free estimate.", serviceType: "Residential Framing", serviceDescription: "Residential framing services in Oklahoma City for new homes, additions, garages, wall framing, roof framing, and structural carpentry." },
   { path: "/framing/commercial", title: "Commercial Framing OKC", seoTitle: "Commercial Framing OKC | Redwood Construction Pros", description: "Commercial framing in OKC for tenant build-outs, offices, retail, and structural scopes. Call today for a project estimate.", serviceType: "Commercial Framing", serviceDescription: "Commercial framing services in Oklahoma City for tenant build-outs, office spaces, retail projects, structural scopes, and jobsite framing packages." },
@@ -72,6 +72,12 @@ const App = () => (
               <Route path="/service-areas" element={<ServiceAreasPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/roofing/roof-repair" element={<RoofRepairPage />} />
+              <Route path="/roofing/roof-replacement" element={<RoofReplacementPage />} />
+              <Route path="/roofing/metal-roofing" element={<MetalRoofingPage />} />
+              <Route path="/roofing/storm-damage" element={<StormDamagePage />} />
+              <Route path="/roofing/hail-damage" element={<HailDamagePage />} />
+              <Route path="/roofing/insurance-claims" element={<InsuranceClaimsPage />} />
               {placeholderRoutes.map((route) => (
                 <Route
                   key={route.path}
