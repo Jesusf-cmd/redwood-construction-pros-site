@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="fragment" content="!">
     <title>Redwood Construction Pros | Roofing, Custom Homes & Metal Buildings in Oklahoma City</title>
     <meta name="description" content="Oklahoma's trusted roofing, custom home & metal building contractor. Licensed, insured, local. Serving OKC Metro & surrounding areas. Call 405-760-9706 for a free estimate." />
     <meta name="author" content="Redwood Construction Pros" />
@@ -37,5 +38,12 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Prerender.io detection — serves static HTML to bots
+      (function(){
+        var defined = 'undefined';
+        if(typeof window.__PRERENDER_INJECTED !== defined) return;
+      })();
+    </script>
   </body>
 </html>
