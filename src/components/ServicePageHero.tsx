@@ -11,6 +11,7 @@ interface ServicePageHeroProps {
   title: string;
   subtitle: string;
   backgroundImage?: string;
+  imageAlt?: string;
   breadcrumbs: BreadcrumbItem[];
 }
 
@@ -29,14 +30,14 @@ const createBreadcrumbSchema = (breadcrumbs: BreadcrumbItem[]) => ({
   })),
 });
 
-const ServicePageHero = ({ title, subtitle, backgroundImage, breadcrumbs }: ServicePageHeroProps) => (
+const ServicePageHero = ({ title, subtitle, backgroundImage, imageAlt, breadcrumbs }: ServicePageHeroProps) => (
   <section className="relative overflow-hidden bg-primary text-primary-foreground">
     <SchemaMarkup schemas={[createBreadcrumbSchema(breadcrumbs)]} />
     {backgroundImage && (
       <div className="absolute inset-0">
         <img
           src={backgroundImage}
-          alt="Redwood Construction Pros roofing and construction crew in Oklahoma City"
+          alt={imageAlt ?? "Redwood Construction Pros roofing and construction crew in Oklahoma City"}
           className="h-full w-full object-cover"
           width={1920}
           height={1080}
