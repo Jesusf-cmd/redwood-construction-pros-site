@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Building2, CircleDollarSign, CloudLightning, Hammer, Home, ShieldCheck, Wrench } from "lucide-react";
 import { RoofingServicePage, type RoofingPageConfig } from "../roofing/RoofingServicePage";
 
@@ -31,12 +30,6 @@ export type AreaConfig = {
   why: string;
   faqs: { question: string; answer: string }[];
 };
-
-const linkedText = (text: string) => (
-  <span>
-    {text}
-  </span>
-);
 
 const toConfig = (area: AreaConfig): RoofingPageConfig => ({
   title: area.title,
@@ -76,5 +69,3 @@ const toConfig = (area: AreaConfig): RoofingPageConfig => ({
 });
 
 export const AreaPage = ({ area }: { area: AreaConfig }) => <RoofingServicePage config={toConfig(area)} />;
-
-export { linkedText };
