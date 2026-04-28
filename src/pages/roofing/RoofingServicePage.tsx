@@ -23,7 +23,9 @@ type RoofingPageConfig = {
   imageAlt: string;
   parentLabel?: string;
   parentPath?: string;
+  currentLabel?: string;
   relatedHeading?: string;
+  processAfterSections?: number;
   sections: { id: string; heading: string; paragraphs: Paragraph[] }[];
   processHeading: string;
   process: { number: number; title: string; description: string }[];
@@ -70,16 +72,16 @@ export const RoofingServicePage = ({ config }: { config: RoofingPageConfig }) =>
       subtitle={config.subtitle}
       backgroundImage={heroImg}
       imageAlt={config.imageAlt}
-      breadcrumbs={baseCrumbs(config.h1.replace(" in Oklahoma City, OK", "").replace(" in Oklahoma City", ""), config.parentLabel, config.parentPath)}
+      breadcrumbs={baseCrumbs(config.currentLabel ?? config.h1.replace(" in Oklahoma City, OK", "").replace(" in Oklahoma City", ""), config.parentLabel, config.parentPath)}
     />
     <TrustSignals />
-    {config.sections.slice(0, 2).map((section) => (
+    {config.sections.slice(0, config.processAfterSections ?? 2).map((section) => (
       <ContentSection key={section.id} id={section.id} heading={section.heading}>
         {section.paragraphs.map((paragraph, index) => <P key={index} item={paragraph} />)}
       </ContentSection>
     ))}
     <ProcessSteps heading={config.processHeading} steps={config.process} />
-    {config.sections.slice(2).map((section) => (
+    {config.sections.slice(config.processAfterSections ?? 2).map((section) => (
       <ContentSection key={section.id} id={section.id} heading={section.heading}>
         {section.paragraphs.map((paragraph, index) => <P key={index} item={paragraph} />)}
       </ContentSection>
