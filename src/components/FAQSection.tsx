@@ -14,9 +14,10 @@ export interface FAQItem {
 interface FAQSectionProps {
   faqs: FAQItem[];
   heading?: string;
+  schemaEnabled?: boolean;
 }
 
-const FAQSection = ({ faqs, heading = "Frequently Asked Questions" }: FAQSectionProps) => {
+const FAQSection = ({ faqs, heading = "Frequently Asked Questions", schemaEnabled = true }: FAQSectionProps) => {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -32,7 +33,7 @@ const FAQSection = ({ faqs, heading = "Frequently Asked Questions" }: FAQSection
 
   return (
     <>
-      <SchemaMarkup schemas={[faqSchema]} />
+      {schemaEnabled && <SchemaMarkup schemas={[faqSchema]} />}
       <section className="section-pad bg-secondary">
         <div className="max-w-[800px] mx-auto">
           <div className="text-center mb-12">
@@ -42,8 +43,8 @@ const FAQSection = ({ faqs, heading = "Frequently Asked Questions" }: FAQSection
           </div>
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="border-border">
-                <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:text-accent hover:no-underline py-5">
+              <AccordionItem key={i} value={`faq-${i}`} className="border-border bg-background px-5 first:rounded-t-lg last:rounded-b-lg">
+                <AccordionTrigger className="text-left text-base font-bold hover:text-accent hover:no-underline py-5">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-base leading-relaxed">
