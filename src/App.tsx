@@ -32,6 +32,11 @@ const ResidentialFramingPage = lazy(() => import("./pages/framing/ResidentialFra
 const CommercialFramingPage = lazy(() => import("./pages/framing/CommercialFramingPage"));
 const MetalFramingPage = lazy(() => import("./pages/framing/MetalFramingPage"));
 const CustomHomeFramingPage = lazy(() => import("./pages/framing/CustomHomeFramingPage"));
+const OklahomaCityAreaPage = lazy(() => import("./pages/areas/OklahomaCityAreaPage"));
+const EdmondAreaPage = lazy(() => import("./pages/areas/EdmondAreaPage"));
+const NormanAreaPage = lazy(() => import("./pages/areas/NormanAreaPage"));
+const MooreAreaPage = lazy(() => import("./pages/areas/MooreAreaPage"));
+const MidwestCityAreaPage = lazy(() => import("./pages/areas/MidwestCityAreaPage"));
 
 const queryClient = new QueryClient();
 
@@ -42,11 +47,6 @@ const PageLoader = () => (
 );
 
 const placeholderRoutes = [
-  { path: "/areas/oklahoma-city", title: "Oklahoma City Construction Services", seoTitle: "OKC Roofing & Framing | Redwood Construction Pros", description: "Roofing, framing, custom homes, and metal buildings in Oklahoma City. Call Redwood Construction Pros for a free estimate." },
-  { path: "/areas/edmond", title: "Edmond Construction Services", seoTitle: "Edmond Roofing & Framing | Redwood Construction Pros", description: "Roofing, framing, custom homes, and metal buildings in Edmond, OK. Call Redwood Construction Pros for a free estimate." },
-  { path: "/areas/norman", title: "Norman Construction Services", seoTitle: "Norman Roofing & Framing | Redwood Construction Pros", description: "Roofing, framing, custom homes, and metal buildings in Norman, OK. Call Redwood Construction Pros for a free estimate." },
-  { path: "/areas/moore", title: "Moore Construction Services", seoTitle: "Moore Roofing & Framing | Redwood Construction Pros", description: "Roofing, hail damage repair, framing, custom homes, and metal buildings in Moore, OK. Call today for a free estimate." },
-  { path: "/areas/midwest-city", title: "Midwest City Construction Services", seoTitle: "Midwest City Roofing & Framing | Redwood Pros", description: "Roofing, framing, storm repair, custom homes, and metal buildings in Midwest City. Call today for a free estimate." },
   { path: "/blog", title: "Construction Blog", seoTitle: "Construction Blog OKC | Redwood Construction Pros", description: "Read roofing, framing, storm damage, and construction planning tips for Oklahoma City. Call today for a free estimate." },
   { path: "/projects", title: "Project Gallery", seoTitle: "Construction Projects OKC | Redwood Construction Pros", description: "View roofing, framing, custom home, and metal building projects in Oklahoma City. Call today for a free construction estimate." },
 ];
