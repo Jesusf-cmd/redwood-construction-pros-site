@@ -4,8 +4,8 @@ import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/FAQSection";
 import PageCTA from "@/components/PageCTA";
 
-const PHONE = "4057609706";
-const PHONE_DISPLAY = "405-760-9706";
+const PHONE = "4054069830";
+const PHONE_DISPLAY = "405-406-9830";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -13,7 +13,7 @@ const jsonLd = {
     {
       "@type": "Service",
       "name": "Roofing Contractor Moore OK",
-      "provider": { "@type": "GeneralContractor", "name": "Redwood Construction Pros", "telephone": "+1-405-760-9706" },
+      "provider": { "@type": "GeneralContractor", "name": "Redwood Construction Pros", "telephone": "+1-405-406-9830" },
       "areaServed": { "@type": "City", "name": "Moore", "containedInPlace": { "@type": "State", "name": "Oklahoma" } },
       "serviceType": "Roofing",
     },
@@ -45,7 +45,7 @@ const RoofingMooreOK = () => (
   <>
     <SEOHead
       title="Roofing Contractor in Moore OK | Redwood Construction"
-      description="Roofing in Moore OK — roof replacement, hail damage repair, insurance claims. Asphalt, metal, impact-resistant shingles. Call 405-760-9706."
+      description="Roofing in Moore OK — roof replacement, hail damage repair, insurance claims. Asphalt, metal, impact-resistant shingles. Call 405-406-9830."
       canonical="/roofing-moore-ok"
       jsonLd={jsonLd}
     />

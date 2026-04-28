@@ -1,8 +1,8 @@
 import { Phone, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const PHONE = "4057609706";
-const PHONE_DISPLAY = "405-760-9706";
+const PHONE = "4054069830";
+const PHONE_DISPLAY = "405-406-9830";
 const EMAIL = "jose@redwoodconstructionpros.com";
 
 interface PageCTAProps {

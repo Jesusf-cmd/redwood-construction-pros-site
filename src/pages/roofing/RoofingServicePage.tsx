@@ -10,7 +10,7 @@ import FAQSection, { FAQItem } from "@/components/FAQSection";
 import InternalLinkGrid from "@/components/InternalLinkGrid";
 import heroImg from "@/assets/hero-construction.jpg";
 
-const PHONE = "405-760-9706";
+const PHONE = "405-406-9830";
 
 type Paragraph = string | { text: string; links: { label: string; path: string }[] };
 

@@ -4,8 +4,8 @@ import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/FAQSection";
 import PageCTA from "@/components/PageCTA";
 
-const PHONE = "4057609706";
-const PHONE_DISPLAY = "405-760-9706";
+const PHONE = "4054069830";
+const PHONE_DISPLAY = "405-406-9830";
 
 const faqs = [
   { question: "How much does a metal building cost in Oklahoma City?", answer: "Metal buildings in OKC run $20–$40 per square foot depending on size, wall height, insulation, and finish level. A basic 30x40 shop runs $24,000–$48,000 including slab. A 40x60 commercial building runs $48,000–$96,000." },
@@ -24,13 +24,13 @@ const MetalBuildingsOKC = () => (
   <>
     <SEOHead
       title="Metal Buildings Oklahoma City | Redwood Construction"
-      description="Metal building contractor in Oklahoma City — shops, commercial buildings, steel structures. Slab to final install. Call 405-760-9706."
+      description="Metal building contractor in Oklahoma City — shops, commercial buildings, steel structures. Slab to final install. Call 405-406-9830."
       canonical="/metal-buildings-oklahoma-city"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "Metal Buildings Oklahoma City",
-        "provider": { "@type": "GeneralContractor", "name": "Redwood Construction Pros", "telephone": "+1-405-760-9706" },
+        "provider": { "@type": "GeneralContractor", "name": "Redwood Construction Pros", "telephone": "+1-405-406-9830" },
         "areaServed": { "@type": "City", "name": "Oklahoma City" },
         "serviceType": "Metal Building Construction",
       }}
