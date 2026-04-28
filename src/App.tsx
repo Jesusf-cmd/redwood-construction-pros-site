@@ -72,12 +72,18 @@ const App = () => (
               <Route path="/service-areas" element={<ServiceAreasPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/roofing" element={<RoofingHubPage />} />
               <Route path="/roofing/roof-repair" element={<RoofRepairPage />} />
               <Route path="/roofing/roof-replacement" element={<RoofReplacementPage />} />
               <Route path="/roofing/metal-roofing" element={<MetalRoofingPage />} />
               <Route path="/roofing/storm-damage" element={<StormDamagePage />} />
               <Route path="/roofing/hail-damage" element={<HailDamagePage />} />
               <Route path="/roofing/insurance-claims" element={<InsuranceClaimsPage />} />
+              <Route path="/framing" element={<FramingHubPage />} />
+              <Route path="/framing/residential" element={<ResidentialFramingPage />} />
+              <Route path="/framing/commercial" element={<CommercialFramingPage />} />
+              <Route path="/framing/metal-framing" element={<MetalFramingPage />} />
+              <Route path="/framing/custom-home" element={<CustomHomeFramingPage />} />
               {placeholderRoutes.map((route) => (
                 <Route
                   key={route.path}
