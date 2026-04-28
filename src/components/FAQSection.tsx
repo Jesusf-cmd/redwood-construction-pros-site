@@ -44,8 +44,8 @@ const FAQSection = ({ faqs, heading = "Frequently Asked Questions", schemaEnable
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="border-border bg-background px-5 first:rounded-t-lg last:rounded-b-lg">
-                <AccordionTrigger className="text-left hover:text-accent hover:no-underline py-5">
-                  <h3 className="text-base font-bold text-inherit">{faq.question}</h3>
+                <AccordionTrigger className="text-left text-base font-bold hover:text-accent hover:no-underline py-5">
+                  {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-base leading-relaxed">
                   {faq.answer}
