@@ -130,8 +130,8 @@ const faqs = [
 const Index = () => (
   <>
     <SEOHead
-      title="Roofing & Construction in Moore OK | Redwood Construction Pros"
-      description="Roofing contractor in Moore OK — roof replacement, hail damage repair, custom homes, metal buildings. Call 405-760-9706 for a same-day estimate."
+      title="Roofing & Framing Contractor OKC | Redwood Pros"
+      description="Roofing, framing, custom homes, and metal buildings in Oklahoma City. Call 405-760-9706 for a free estimate today."
       canonical="/"
       jsonLd={jsonLd}
     />
