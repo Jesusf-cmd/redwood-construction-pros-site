@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -7,19 +8,26 @@ import AnalyticsTracker from "@/components/AnalyticsTracker";
 import Layout from "@/components/Layout";
 import StructuredData from "@/components/StructuredData";
 import Index from "./pages/Index";
-import RoofingMooreOK from "./pages/RoofingMooreOK";
-import RoofReplacementOKC from "./pages/RoofReplacementOKC";
-import HailDamageRepair from "./pages/HailDamageRepair";
-import CustomHomeBuilder from "./pages/CustomHomeBuilder";
-import MetalBuildingsOKC from "./pages/MetalBuildingsOKC";
-import BarndominiumBuilder from "./pages/BarndominiumBuilder";
-import ServiceAreasPage from "./pages/ServiceAreasPage";
-import ContactPage from "./pages/ContactPage";
-import AboutPage from "./pages/AboutPage";
-import NotFound from "./pages/NotFound";
-import PlaceholderPage from "./pages/PlaceholderPage";
+
+const RoofingMooreOK = lazy(() => import("./pages/RoofingMooreOK"));
+const RoofReplacementOKC = lazy(() => import("./pages/RoofReplacementOKC"));
+const HailDamageRepair = lazy(() => import("./pages/HailDamageRepair"));
+const CustomHomeBuilder = lazy(() => import("./pages/CustomHomeBuilder"));
+const MetalBuildingsOKC = lazy(() => import("./pages/MetalBuildingsOKC"));
+const BarndominiumBuilder = lazy(() => import("./pages/BarndominiumBuilder"));
+const ServiceAreasPage = lazy(() => import("./pages/ServiceAreasPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const PlaceholderPage = lazy(() => import("./pages/PlaceholderPage"));
 
 const queryClient = new QueryClient();
+
+const PageLoader = () => (
+  <div className="min-h-[40vh] bg-background px-6 py-24 text-center text-sm font-semibold text-muted-foreground">
+    Loading...
+  </div>
+);
 
 const placeholderRoutes = [
   { path: "/roofing", title: "Roofing Services in Oklahoma City", seoTitle: "Roofing Contractor OKC | Redwood Construction Pros", description: "Roof repair, replacement, metal roofing, and storm work in Oklahoma City. Call Redwood Construction Pros for a free inspection." },
@@ -52,26 +60,28 @@ const App = () => (
         <AnalyticsTracker />
         <StructuredData />
         <Layout>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/roofing-moore-ok" element={<RoofingMooreOK />} />
-            <Route path="/roof-replacement-oklahoma-city" element={<RoofReplacementOKC />} />
-            <Route path="/hail-damage-roof-repair-moore-ok" element={<HailDamageRepair />} />
-            <Route path="/custom-home-builder-moore-ok" element={<CustomHomeBuilder />} />
-            <Route path="/metal-buildings-oklahoma-city" element={<MetalBuildingsOKC />} />
-            <Route path="/barndominium-builder-oklahoma" element={<BarndominiumBuilder />} />
-            <Route path="/service-areas" element={<ServiceAreasPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            {placeholderRoutes.map((route) => (
-              <Route
-                key={route.path}
-                path={route.path}
-                element={<PlaceholderPage {...route} canonical={route.path} />}
-              />
-            ))}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/roofing-moore-ok" element={<RoofingMooreOK />} />
+              <Route path="/roof-replacement-oklahoma-city" element={<RoofReplacementOKC />} />
+              <Route path="/hail-damage-roof-repair-moore-ok" element={<HailDamageRepair />} />
+              <Route path="/custom-home-builder-moore-ok" element={<CustomHomeBuilder />} />
+              <Route path="/metal-buildings-oklahoma-city" element={<MetalBuildingsOKC />} />
+              <Route path="/barndominium-builder-oklahoma" element={<BarndominiumBuilder />} />
+              <Route path="/service-areas" element={<ServiceAreasPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              {placeholderRoutes.map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={<PlaceholderPage {...route} canonical={route.path} />}
+                />
+              ))}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </Layout>
       </BrowserRouter>
     </TooltipProvider>

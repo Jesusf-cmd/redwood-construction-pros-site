@@ -139,7 +139,15 @@ const Index = () => (
     {/* ═══════════ HERO ═══════════ */}
     <section className="relative min-h-[92vh] flex items-center overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroImg} alt="Roof replacement after hail damage in Moore Oklahoma" className="w-full h-full object-cover" width={1920} height={1080} loading="eager" />
+        <img
+          src={heroImg}
+          alt="Roof replacement after hail damage in Moore Oklahoma"
+          className="w-full h-full object-cover"
+          width={1920}
+          height={1080}
+          loading="eager"
+          fetchPriority="high"
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/85 to-primary/75" />
       </div>
 
